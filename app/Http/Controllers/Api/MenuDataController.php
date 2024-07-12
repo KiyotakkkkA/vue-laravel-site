@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Menu;
+use Illuminate\Http\Request;
 
 class MenuDataController extends Controller
 {
@@ -13,3 +14,4 @@ class MenuDataController extends Controller
         return response()->json($data);
     }
 }
+

@@ -22,7 +22,7 @@ import axios from "axios";
 const cartItems = ref([]);
 
 axios
-    .get("/menudata")
+    .get("/api/menudata")
     .then((response) => {
         cartItems.value = response.data.filter((item) =>
             session.selected.has(item.id)
@@ -33,8 +33,6 @@ axios
     });
 
 const session = reactive(data.session);
-
-console.log(cartItems);
 
 const clearCart = () => {
     cartItems.value.forEach((item) => {

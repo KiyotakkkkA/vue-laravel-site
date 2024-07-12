@@ -3,6 +3,7 @@ import { reactive } from "vue";
 const userSession = () => {
     var totalValue = 0;
     var personalCut = 0;
+    var isAdmin = false;
 
     var selected = new Map();
 
@@ -10,6 +11,7 @@ const userSession = () => {
         totalValue,
         personalCut,
         selected,
+        isAdmin,
     };
 };
 
@@ -33,5 +35,7 @@ if (!loadSessionData("session")) {
 }
 
 var session = reactive(loadSessionData("session"));
+
+console.log("Rebuilding session", session);
 
 export default { session, saveSessionData };

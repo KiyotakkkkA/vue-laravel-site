@@ -10,8 +10,9 @@ const all = ref([]);
 
 onMounted(() => {
     axios
-        .get("/menudata")
+        .get("/api/menudata")
         .then((response) => {
+            console.log(response.data);
             all.value = response.data;
         })
         .catch((error) => {
@@ -135,6 +136,8 @@ body button {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
     gap: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .grid-container > div {

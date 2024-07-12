@@ -14,7 +14,7 @@ window.addEventListener("beforeunload", function () {
     <div class="main-content">
         <router-view />
     </div>
-    <footer-component />
+    <footer-component v-if="$route.path != '/adminpanel'" />
 </template>
 
 <style scoped>
